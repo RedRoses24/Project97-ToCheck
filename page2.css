@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap');
+#bodypage2{
+    background-color: paleturquoise;
+    background-size: cover;
+    backdrop-filter:unset;
+    background-image:url(gradient.png);
+}
+.header{
+    max-width: 80%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif;
+}
+.row{
+    margin-left: 100px;
+}
+#commentsec{
+    margin-left: 20px;
+}
+#sectionlearn{
+    margin-top: 40px;
+}
+iframe{
+    border-color: black;
+    border-spacing: 10;
+    border-width: 10;
+    border-collapse: separate;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #headpg2{
+    max-width: 20%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif; 
+    margin-top: 1%;
+    margin-left: 20px;
+  }
+  #myBtn{
+      margin-top: 15px;
+      margin-left: 25px;
+      font-family: 'El Messiri', sans-serif;
+      font-weight: bold;
+  }
+  #myBtn:hover{
+      color: black;
+      background-color:lightgray;
+  }
+  #p1{
+    font-weight: bold;  
+  }
+  #comment{
+      background-color: white;
+      margin-top: 20px;
+  }
+  iframe{
+    max-height: 360px;
+  }
+  hr{
+    color: black;
+  }
+  #load_btn{
+    text-align: center;
+  }
+  .vertical-center {
+    margin: 0;
+    top: 70%;
+    padding-left: 43%;
+  }
+  #imgli1, #imgli2, #imgli3, #imgli4, #imgli5, #imgli6, #imgli7, #imgli8, #imgli9, #imgli10, #imgli11, #imgli12{
+    background-size: cover;
+    max-width: 115px;
+    max-height: 100px;
+  }
+  #heading2, #head3{
+    max-width: 20%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif; 
+    margin-top: 1%;
+    margin-left: 40%;
+  }
+  h1{
+    max-width: 90px;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif; 
+    margin-top: 2%;
+  }
+  #rowdiv{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .circle{
+    background-color: black
+  }
+
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+   
+  .load-more-container {
+    background: #fff;
+    width: 500px;
+    min-height: 500px;
+    margin: 20px auto;
+    position: relative;
+  }
+  .load-more-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .load-more-container ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .load-more-container ul li {
+    width: calc(25% - 10px);
+    margin: 10px 5px 0;
+    height: 100px;
+    background:  #1D95F8;
+    color: #fff;
+    float: left;
+    border-radius: 2px;
+  }
+  .load-more-container ul li:nth-child(1n + 5) {
+    max-height: 0;
+    opacity: 0;
+    transition: 0.1s ease-in;
+  }
+  .load-more-container .load-more-btn {
+    width: 150px;
+    line-height: 40px;
+    border-radius: 2px;
+    margin: 0 auto;
+    display: block;
+    background:   #494747;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+  }
+  .load-more-container .load-more-btn:hover {
+    background: #333;
+  }
+  .load-more-container .load-more-btn .loaded {
+    display: none;
+  }
+  .load-more-container #load-more {
+    display: none;
+  }
+  .load-more-container #load-more:checked ~ ul li:nth-child(1n + 5) {
+    max-height: 999px;
+    opacity: 1;
+    transition: 0.2s ease-in;
+  }
+  .load-more-container #load-more:checked ~ .load-more-btn .loaded {
+    display: block;
+  }
+  .load-more-container #load-more:checked ~ .load-more-btn .unloaded {
+    display: none;
+  }
+
+.w3-container:hover{
+  cursor: pointer;
+}
+
+#HCB_comment_box{
+  text-align: center;
+  background-color: white;
+  border-width: 2;
+  border-color: black;
+}
+#SectionName{
+  border-radius: 0;
+  border-color: black;
+  margin:auto;
+  margin-bottom: 20px;
+  border-width: 20px;
+}
+#button{
+  position: relative;
+  background-color: #04AA6D;
+  border: none;
+  font-size: 2ox;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: 'El Messiri', sans-serif;
+  margin-top: 0;
+}
+#button::after{
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#button:active::after{
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+  font-family:'Courier New', Courier, monospace;
+
+}
+#time{
+  background-color: white;
+  font-family: 'El Messiri', sans-serif;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+#time:hover{
+  background-color: black;
+  color: white;
+}
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+#iframe2{
+  float: left;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  color: white;
+}
+
+.glow-on-hover:active {
+  color: white;
+}
+
+.glow-on-hover:active:after {
+  color: white;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+  color: white;
+}
+.glow-on-hover{
+  background-color: turquoise;
+}
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  color: white;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+#row2{
+  float: left;
+}
+#signhead{
+  max-width: 70%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif; 
+}
+#wiki_h{
+  max-width: 70%;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+  font-family: 'El Messiri', sans-serif; 
+  margin-left: 15%;
+}
+#con1{
+  text-align: center;
+  display: inline-block;
+}
+#about{
+  background-color: #000046;
+  max-height: 1190%;
+}
+#head2{
+  font-family:'El Messiri', sans-serif;
+  color: white;
+} 
+#aboutimg{
+  border-radius: 40%;
+  max-width: 150px;
+} 
+.arrow-highlight{
+  color: orange;
+}
+#h1{
+  text-align: center;
+}
+#myCanvas
+{
+    border-width:10px;
+    background-color: white; 
+    border-style:ridge;
+}
+#iframe1{
+  text-align: center;
+  display:block;
+  margin-left: 20%;
+  border-color: lightblue;
+}
+#feed2{
+  max-width: 80%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-left: 10%;
+    padding-right: 10px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif; 
+    text-align: center;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 230px;
+}
+.carousel-inner{
+  display: inline-block;
+  text-align: center;
+  max-height: 700;
+  max-width: 500;
+  margin-left:20;
+  margin-right: 50%;
+}
+.carousel slide{
+  display: inline-block;
+}
+#Slides{
+  max-height: 300;
+  max-width: 200;
+  text-align: center;
+  display: inline-block;
+}
+.item{
+  text-align: center;
+  margin-right: 50;
+  max-width: 100%;
+  display: inline-block;
+  margin-left: 0%;
+  padding-left: 2;
+}
+.sliders{
+  max-height: 200;
+  max-width: 150px;
+}
+#button{
+  margin-top: 0;
+}
+#btn1, #btn2, #btn3, #btn4{
+  max-height: 200;
+  max-width: 300;
+  text-align: center;
+  display: inline-block;
+  margin-left: 200px;
+}
+#div-row{
+  border-radius: 20;
+  border-width: 2;
+  border-color: black;
+  margin-top: 0%;
+}
+#p1{
+  background-color: white;
+  color: black;
+  margin-top: 20px;
+}
+#myNavbar{
+  background-color: paleturquoise;
+  width: 100%; 
+    font-family: inherit; 
+    position:fixed;
+    top: 0px; 
+    z-index: 10;  
+    margin-top: 0px; 
+}
+#nav1, #nav2{
+  color: black;
+}
+#section1a{
+  background-image: url('https://st4.depositphotos.com/36483482/i/600/depositphotos_397650510-stock-photo-green-leaves-background-minimal-nature.jpg');
+  background-image: transparent;
+  background-size: cover;
+  max-height: 1000%;
+}
+#section1a{
+  height: 80vh;
+}
+#feedback{
+  background-image: url('');
+}
+.carousel-inner > .item > img { width:640px; height:360px; margin-top: 10px }
+.simple {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  border-top: 20px;
+  border-left: 20px;
+  cursor: pointer;
+  position: relative;
+  background-color: #C3B1E1;
+}
+
+.simple::after {
+  content: "";
+  background-color: darkorchid;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+.simple:hover{
+  background-color: darkmagenta;
+}
+#success-btn{
+max-width: 1100%;
+} 
+#success-btn:hover{
+border-color: darkgray;
+box-shadow: #333;
+}
+#mark1, #mark2{
+color:blue;
+background-color: lightblue;
+}
+#header2{
+  max-width: 70%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    font-family: 'El Messiri', sans-serif;
+    text-align: center;
+}
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+#fa{
+  color: white;
+  background-color: white;
+}
+#btn-link:hover{
+ background-color: #002bff;
+ color: white;
+ 
+}
+#logout:hover{
+max-height: 60px;
+max-width: 200px;
+}
+a:visited{
+  background-color: purple;
+}
+#user_name{
+  color: white;
+}
+  

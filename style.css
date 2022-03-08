@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap');
+
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+    font-family: 'El Messiri', sans-serif;
+    font-size:medium
+}  
+body {  
+    overflow: hidden; 
+    background: #031323;
+}  
+section {  
+    display: flex;  
+    min-height: 100vh;  
+    align-items: center;  
+    justify-content: center;  
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}  
+section .colour {  
+    position: absolute;  
+    filter: blur(150px);  
+}  
+section .colour:nth-child(1) {  
+    top: -350px;  
+    width: 600px;  
+    height: 600px;  
+    background: #bf4ad4;  
+}  
+section .colour:nth-child(2) {  
+    left: 100px;  
+    width: 500px;  
+    height: 500px;  
+    bottom: -150px;  
+    
+}  
+section .colour:nth-child(3) {  
+    right: 100px;  
+    bottom: 50px;  
+    width: 300px;  
+    height: 300px;  
+    background: #2b67f3;  
+}  
+.box {  
+    position: relative;  
+}  
+.box .square {  
+    position: absolute;  
+    border-radius: 10px;  
+    backdrop-filter: blur(5px);  
+    background: rgba(255, 255, 255, 0.1);  
+    animation-delay: calc(-1s * var(--i));  
+    animation: animate 10s linear infinite;  
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5);  
+    border-right: 1px solid rgba(255, 255, 255, 0.2);  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);  
+}  
+@keyframes animate {  
+    0%,  
+    100% {  
+         transform: translateY(-40px);  
+    }  
+    50% {  
+         transform: translateY(40px);  
+    }  
+} 
+
+.box .square:nth-child(1) {  
+    top: -50px;  
+    left: -60px;  
+    width: 100px;  
+    height: 100px;  
+}  
+.box .square:nth-child(2) {  
+    z-index: 2;  
+    top: 150px;  
+    left: -100px;  
+    width: 120px;  
+    height: 120px;  
+}  
+.box .square:nth-child(3) {  
+    z-index: 2;  
+    width: 110px;  
+    height: 110px;  
+    right: -50px;  
+    bottom: -60px;  
+}  
+.box .square:nth-child(4) {  
+    left: 100px;  
+    width: 50px;  
+    height: 50px;  
+    bottom: -80px;  
+}  
+.box .square:nth-child(5) {  
+    top: -80px;  
+    left: 140px;  
+    width: 60px;  
+    height: 60px;  
+} 
+.container {
+    position: relative;
+    padding: 50px;
+    width: 500px;
+    min-height:390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  } 
+
+.form {  
+    width: 100%;  
+    height: 100%;  
+    padding: 40px;  
+    position: relative;  
+}  
+.form h2 {  
+    color: #fff;  
+    font-size: 24px;  
+    font-weight: 600;  
+    position: relative;  
+    letter-spacing: 1px;  
+    margin-bottom: 40px;  
+}  
+.form h2::before {  
+    left: 0;  
+    width: 80px;  
+    height: 4px;  
+    content: "";  
+    bottom: -10px;  
+    background: #fff;  
+    position: absolute;  
+}  
+.form .input__box {  
+    width: 100%;  
+    margin-top: 20px;  
+}  
+.form .input__box input {  
+    width: 100%;  
+    color: #fff;  
+    border: none;  
+    outline: none;  
+    font-size: 16px;  
+    padding: 10px 20px;  
+    letter-spacing: 1px;  
+    border-radius: 35px;  
+    background: rgba(255, 255, 255, 0.2);  
+    border: 1px solid rgba(255, 255, 255, 0.5);  
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);  
+    border-right: 1px solid rgba(255, 255, 255, 0.2);  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);  
+} 
+.input__box:hover{
+color: grey;
+} 
+.form::placeholder {  
+    color: #fff;  
+}  
+.form .input__box input[type="submit"] {  
+    color: #666;  
+    cursor: pointer;  
+    background: #fff;  
+    max-width: 100px;  
+    font-weight: 600;  
+    margin-bottom: 20px;  
+}  
+.forget {  
+    color: #fff;  
+    margin-top: 5px;  
+}  
+.forget a {  
+    color: #fff;  
+    font-weight: 600;  
+    text-decoration: none;  
+}
+.view {
+    background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+   transition: 0.5s;
+}
+h2 {
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  .remember {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  p {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+    input {
+      width: 80%;
+      outline: none;
+      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 10px;
+      padding-left: 40px;
+      border-radius: 15px;
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+        }
+      50% {
+        background-position: 100% 50%;
+        }
+      100% {
+        background-position: 0% 50%;
+        }
+  }
+  #loginbtn{
+    max-width: 80%;
+    outline: none;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    text-align: inline;
+    vertical-align:middle;
+  }
+  #loginbtn:hover{
+cursor:pointer;
+  }
+ 

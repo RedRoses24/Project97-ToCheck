@@ -1,0 +1,563 @@
+<html>
+    <head>
+       <title>Signdo Learn</title>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="page2.js"></script>
+<script src="canvas.js"></script>
+<script src="fabric.js"></script>
+<script src="main2.js"></script>
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  img {
+    max-width: 100%
+  }
+  .image {
+    flex-basis: 40%
+  }
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+</style>
+
+<style>
+  body{
+  
+      background-position: center;
+      background-size: cover;
+  }
+  #myCanvas
+  {
+      margin-top: 10px;
+    border-width:40px;
+    background-color: white; 
+    border-style:ridge;
+  }
+  
+  h4
+  {
+    
+    color:red!important;
+    
+  }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="page2.css">
+        <style>
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+        }
+        
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      </style>
+    </head>
+
+<body id="bodypage2">
+<section id="section1a">
+  <nav class="navbar-inverse" style="position:sticky;top:0;z-index:99999">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#sec1" style="color: #000;">WHAT IS SIGNDO?</a></li>
+        <li><a href="#sectionlearn" style="color: #000;">INTRO THROUGH VIDEOS</a></li>
+        <li><a href="#books" style="color: #000;"><b>BOOKS</b></a></li>
+        <li><a href="#apps" style="color: #000;">REFERENCE MATERIAL:APPS</a></li>
+          <li><a href="#direction" style="color: #000;">SIGN LANGUAGE DEAF RELATED COURSES</a></li>
+        <li><a href="#tips" style="color: #000;">TIPS TO LEARN</a></li>
+        <li><a href="#div-row" style="color: #000;">QUICK LINKS</a></li>
+        <li><a href="#feedback" style="color: #000;">FEEDBACK</a></li>
+        <li><a href="#about" style="color: #000;">ABOUT ME</a></li>
+      </ul>
+      <a class="navbar-brand" href="#about" style="color: #000;"><strong>Kyra Verma</strong></a>
+    </div>
+    
+    </nav>
+   
+  <p id="p1" style="height: 50px; font-size: larger; font-weight: bold; margin-left: 20px; margin-right: 20px; border-radius: 20px; text-align: justify; margin-top: 70px; text-align: right; max-width: fit-content; float: right; border-style: ridge;">
+    Current Date and Time is <span id='date-time'></span>.</p>
+  <script>
+       var dt = new Date();
+       document.getElementById('date-time').innerHTML=dt;
+       </script>
+      <button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="log_out()" style="margin-left: 25px;">Logout</button>
+    <h3 style="color: black;" id="username"></h3>
+<section> 
+  <center>
+  
+  <script>username=localStorage.getItem("username");
+    document.getElementById("username").innerHTML="Welcome "+username+" !";
+    </script>
+</center>
+</section>
+  <section id="sec1">
+    <div id="headpg2">What is Sign Language & Signdo?</div>
+  </section>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" class="simple" type="button">Click on me to know!</button>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+    
+        <p id="p1"><mark id="mark1">Sign language</mark>  is a natural and visual form of language that uses movements and expression to convey meaning between people.
+          There are 3 types of Sign-language:<mark class="arrow-highlight">American Sign Language (ASL), British Sign Language (BSL) and Australian Sign Language (Auslan).</mark> 
+        <mark id="mark2">Signdo</mark>  helps make Sign language easy and fun with videos and tips! Happy Learning!
+        <img src="https://i.pinimg.com/originals/e4/26/ca/e426ca921c19e1d87c39017c80ada6b1.jpg" class="img-responsive">
+        </p>
+      </div>
+     </div>
+          </div>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-items: center;">
+        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="align-content: center;">
+            
+             <div class="item" style="align-items: center; margin-left: 90px;">
+               <img class="img-responsive" src="https://media4.giphy.com/media/DcPfy7StVKeB5dv0ND/giphy.gif?cid=6c09b952aa33ff6fd37706144d1de25446ff74946ea861ad&rid=giphy.gif&ct=s" alt="hello" style="width: 100%;">
+               <div class="carousel-caption">
+                 <h1>HELLO</h1>
+                 <p></p>
+               </div>
+             </div>
+           
+             <div class="item active" style="align-items: center;">
+               <img class="img-responsive" src="https://c.tenor.com/a5PTBHBFF00AAAAC/please-sign-language.gif" alt="Please" style="width:100%; margin-right: 200;">
+               <div class="carousel-caption">
+                 <h1>Please</h1>
+                 <p></p>
+               </div>
+             </div>
+            
+             <div class="item" style="align-items: center;">
+               <img class="img-responsive" src="https://c.tenor.com/0uoJBcT1WIwAAAAC/how-are-you-signtime.gif" alt="How are you?" style="width:100%;">
+               <div class="carousel-caption">
+                 <h1>How are you?</h1>
+                 <p></p>
+               </div>
+             </div>
+                <div class="item" style="align-items: center;">
+               <img class="img-responsive" src="https://c.tenor.com/TYFMxJ6JYccAAAAC/sorry-sign-language.gif" alt="Sorry" style="width:100%;">
+               <div class="carousel-caption">
+                 <h1>Sorry</h1>
+                 <p></p>
+               </div>
+             </div>
+            </div>
+            
+            <!-- Left and right controls -->
+            <div class="sliders" style="text-align: center; margin-left: 30px;">
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class=""></span>
+               <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            </div>
+      
+    
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+  </section>
+
+<section id="sectionlearn">
+    <style>
+    * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: Arial;
+      }
+      
+      .header {
+        text-align: center;
+        padding: 32px;
+      }
+      
+      .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+      
+      /* Create four equal columns that sits next to each other */
+      .column {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+      }
+      
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+      
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 800px) {
+        .column {
+          -ms-flex: 50%;
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+      
+     
+      @media screen and (max-width: 450px) {
+        .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+      </style>
+      <!-- Photo Grid -->
+      <div class="row">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/3jqdRk-Naz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <iframe width="668" height="345" src="https://www.youtube.com/embed/Z1JwYgFBhu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <section id="sectionDiv">
+            <style>
+              #myDIV {
+                width: 100%;
+                padding: 50px 0;
+                text-align: center;
+                background-color: lightblue;
+                margin-top: 20px;
+              }
+              </style>
+             </section>
+ </div>
+ <div class="container" style="display: flex;  object-fit: cover;">
+  <div class="wrapper">
+      </section>
+      <hr>
+      <section id="books">
+        <h2 style="text-align: center; margin-left: 15%;" id="header2">Books Suitable For Every Pocket :<mark style="background-color: plum; color: #b109d3; border-radius: 20px;">Click On Them!</mark></h2>
+        <div class="col-container">
+          <div class="col" style="background-color: #0492c2;">
+            <h2 style="font-family: El Messiri, sans-serif; color: white;">Learn Sign Lang...in a hurry</h2>
+            <a href="https://www.amazon.in/Learn-Sign-Language-Hurry-American/dp/1598698680" target="_blank"> 
+              <img class="img2" src="https://images-na.ssl-images-amazon.com/images/I/51wApGHOh2L._SX323_BO1,204,203,200_.jpg"></a>
+          </div>
+        
+          <div class="col" style="background-color: #52b2b5">
+            <h2 style="font-family: El Messiri, sans-serif; color: white;">Pocket Dictionary Of Signing</h2>
+            <a href="https://www.amazon.in/Pocket-Dictionary-Signing-Rod-Butterworth/dp/039951743X/ref=pd_sim_10/258-4074606-5708525?pd_rd_w=P5m0l&pf_rd_p=266e543c-8814-43f9-9cfc-d21c75bff3a2&pf_rd_r=4T4FFR7SJ18MFFA37SS8&pd_rd_r=0a771512-07ce-4036-a331-72f1da49faac&pd_rd_wg=WWfOL&pd_rd_i=039951743X&psc=1&asin=039951743X&revisionId=&format=4&depth=1" target="_blank"> 
+              <img class="img2" src="https://m.media-amazon.com/images/P/039951743X.01._SCLZZZZZZZ_SX500_.jpg"></a>
+          </div>
+        
+          <div class="col" style="background:#63cbda">
+            <h2 style="font-family: El Messiri, sans-serif; color: white;">Signing Made Easy</h2>
+            <a href="https://www.amazon.in/Signing-Made-Easy-Complete-Learning/dp/0399514902/ref=pd_lpo_4?pd_rd_i=0399514902&psc=1&asin=0399514902&revisionId=&format=4&depth=1" target="_blank"> 
+              <img class="img2" src="https://m.media-amazon.com/images/P/0399514902.01._SCLZZZZZZZ_SX500_.jpg"></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+        
+      <section id="apps">
+      <hr width="50%" style="color: black;">
+      <h2 id="heading2">SOME FAMOUS APPS TO LEARN SIGN LANGUAGE FROM</h2>
+      <h3 id="head3">CLICK ON THEM!</h3>
+      <div class="load-more-container">
+        <input type="checkbox" id="load-more"/>
+        <ul>
+          <li id="li1"><a href="https://play.google.com/store/apps/details?id=com.mobireactor.signlanguage" target="_blank">
+            <img src="https://play-lh.googleusercontent.com/4UPSnZVYh4pEeD85XXUAi3Lhdfuw54rGD2kcy--BA8t86Zuua1NpLQxUeVS7QzUZ91g=s180-rw" alt="Americam Learning language" id="imgli1">
+          </a></li>
+          <li id="li2"><a href="https://play.google.com/store/apps/details?id=br.com.handtalk" target="_blank">
+            <img src="https://play-lh.googleusercontent.com/ADlJwhdJOF5rBFT0ISanhY0-ZC7aXjXcADBa0hSopPTvtw3IPnO6t2h9t0BS69zaCs6i=s180-rw" alt="Hand Talk Translator" id="imgli2">
+          </a></li>
+          <li id="li3"><a href="https://play.google.com/store/apps/details?id=intersign.learn.asl" target="_blank">
+            <img src="https://play-lh.googleusercontent.com/iYNN4h0ZqrhIFCbTXFTXyjEzy1WAcc9v3X54jX5Ad1wmzMb7oO9pnOeIq6qby0WzEQ=s180-rw" alt="InterSign" id="imgli3">
+          </a></li>
+          <li id="li4"><a href="https://play.google.com/store/apps/details?id=com.basvanderwilk.aslkids" target="_blank">
+            <img src="https://play-lh.googleusercontent.com/yEdMf2DDUzspcBfWXXEKFJSNG-FE3miFY9PwHTM0Za2rFfDqB592fJMKg7r6QhRXWQ=s180-rw" alt="ASL Kids!" id="imgli4">
+          </a></li>
+
+          <div class="row" id="rowdiv">
+            <li id="li5"><a href="https://play.google.com/store/apps/details?id=com.aestheticapps.signlanguageforbeginners" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/M2jboGhQFVlLFSz-Deg96oGQciWs-nEU_G2YHNJiSRK5DJvYWu7Cwt6dgBE0wbUkFg=s180-rw" alt="Sign Lang for beginners" id="imgli5">
+            </a></li>
+            <li id="li6"><a href="https://play.google.com/store/apps/details?id=com.spreadthesign.androidapp_paid" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/l98xKDa_QvQeU8pX4oj714cJ678bJ6W0wFJXPOinXt_C2isvrV0tmnQd4tgz4OADwvA=s180-rw" alt="Spread The Sign" id="imgli6">
+            </a></li>
+            <li id="li7"><a href="https://play.google.com/store/apps/details?id=org.jw.jwlibrary.signlanguage" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/uB8W7QlliXhhRC2vLx5OcZbxEoUMK-XcL346qO0viWj45fmOd8Exi860wl7GVNotow=s180-rw" alt="JW Sign-language" id="imgli7">
+            </a></li>
+            <li id="li8"><a href="https://play.google.com/store/apps/details?id=com.asltranslator" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/jBhtQ2wjoOflKanFCOEXWJIGqOg3XimXkdckeoyFa0EuyDmX2lo_lgsfvI9zMmkLt5Q1=s180-rw" alt="ASL Translator" id="imgli8">
+            </a></li>
+
+          </div>
+          <div class="row" id="rowdiv">
+            <li id="li9"><a href="https://play.google.com/store/apps/details?id=com.storysign.storysign" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/C2bF2VKldYlmEnMbSIya_7RoNqQeA3pBOEncpDquF1YA8dX5eGZ7Fmmv3FNjKUg1i2M=s180-rw" alt="StorySign" id="imgli9">
+            </a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.xapapps.signlanguage" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/N5W6TRt6egV0SZIe1lUPM7q3pJiU0jAg_qftr66xwUWXeeplkVRxn3GHwDmid39rj2E=s180-rw" alt="Beginners Sign Language" id="imgli10">
+            </a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.sign.language.learn" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/Y0fjhljLFV7L-k0SHwd62_fmQaQtuWh20xv3Z-LI1C33wIWHlAdqvGMRaVPfd168cA=s180-rw" alt="Sign Language Premium" id="imgli11">
+            </a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.banool.auslan_dictionary" target="_blank">
+              <img src="https://play-lh.googleusercontent.com/f8rjT2k2fwW_GAjnYQ0SBw_zZEoAUKZdEChS-fh-JTSEqWOcNga4fSvZXwokuvVU8Q=s180-rw" alt="Auslan dictionary" id="imgli12">
+            </a></li>
+
+          </div>
+</ul>
+<div class="page-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="img-responsive">
+<div id="row1"><div class="center">
+  <button onclick="myFunction()" class="btn btn-success" id="success-btn" style="width:100%; margin-right: 20px;">Click On Me to subscribe Signdo!</button>
+
+<div id="myDIV">
+  <center>
+    <DIV ID="SectionName" class="row" STYLE="display:none; margin-top: 0px;"><div class="text-capitalize">Unlock more content by subscribing to Signdo now! Click the button below!<br><button type="button" class="btn btn-success" id="button" onclick="more()">UNLOCK MORE!</button></div></DIV>
+    <div id="videos" class="row" style="display: none;">
+    </div>
+      <div class="row" id="row2">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/p0ufyoe0URA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/v1desDduz5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </center>
+</div></div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<center>
+  <div class="page-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <section id="direction">
+    <h1 id="signhead">Sign Language Deaf Related Courses</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2311.408802431084!2d-5.936797284688918!3d54.59679058801439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486108581c8afe2f%3A0xd246ace8ab3d9d5d!2sSign%20Language%20%26%20Deaf%20Related%20Courses%20Section!5e0!3m2!1sen!2sin!4v1646056463935!5m2!1sen!2sin" width="1000" height="1900%" style="border:0; margin-bottom: 20px;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+  </div>
+</center>
+<center>
+  <div class="page-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<section id="tips">
+  <div class="center" id="con1">
+  <marquee id="m1" class="text-capitalize" style="font-size: larger; font-weight: bold;">Tips To Learn Sign-language</marquee> 
+  <hr> <hr>
+  <img id="family_img" src="https://ptemocktests.com/wp-content/uploads/2021/03/pte-tips-and-tricks.jpeg" class="img-responsive">
+  <h3 id="one"><mark>Tips on Learning Sign-language</mark></h3>
+   <button type="button" onclick="family()">Next</button>
+   </div>
+   <div class="container" style="background-color:#F0F8FF ; border-radius: 20px; border-color: #0492c2; border-style: ridge;">
+   <section id="div-row">
+     <h1 style="max-width: 90%;">Quick Links & My Previous Projects</h1>
+     <div class="row">
+     <button onclick=" window.open(' https://pin.it/255hnEp','_blank')" class="btn btn-danger" id="btn1" style="float:inline-start; margin-left: auto;">Learn the Alphabets
+      <button onclick="window.open('https://in.pinterest.com/pin/333618284903859971/', '_blank')" class="btn btn-primary" id="btn2">Colors of ASL
+      <button onclick="window.open('https://pin.it/70U318G','_blank')" class="btn btn-danger" id="btn3">Greetings
+      <button onclick="window.open('https://pin.it/70Zx7zg','_blank')" class="btn btn-primary" id="btn4">Seasons
+       </div>
+     <hr>
+<div class="row">
+  <a href="https://redroses24.github.io/TouchToDrawCanvas/" target="_blank" style="margin-left: 200px;">
+      <button type="button" class="glyphicon glyphicon-thumbs-up btn btn-success" id="btn-link" style="margin: auto;">Draw The Different Signs:Canvas</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </a>
+    <a href="https://redroses24.github.io/DigiChat-DigitalChat/" target="_blank">
+      <button type="button" class="glyphicon glyphicon-thumbs-up btn btn-success" id="btn-link">&nbsp;DigiChat</button>
+    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://redroses24.github.io/FinalMathsQuiz/" target="_blank">
+      <button type="button" class="glyphicon glyphicon-thumbs-up btn btn-success" id="btn-link">&nbsp;Quiz</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </a>
+</div>
+</div>
+  </center>
+  
+  </section>
+  <hr>
+  </center>
+<hr>
+
+ <script>
+ var names=[
+ "Start from Alphabets",
+ "You Can Read It Through! :)",
+ "Signs To Ponder",
+ "Flashcard"
+ ];
+var images=[
+ "tip1-alphabets.jpg",
+ "tip2-6ones.png",
+ "tip3-sign-images.jpeg",
+ "tip4-flashcard.jpg"
+];
+var i=0;
+function family(){
+ document.getElementById("one").innerHTML=names[i];
+ document.getElementById("family_img").src=images[i];
+ i++;
+ if(i==4){
+   i=0;
+ }}
+</script>
+</div>
+</section>
+</div>
+<hr>
+</section>
+<hr>
+<section id="wiki">
+  <iframe width="900" height="1000" src="https://en.wikipedia.org/wiki/Sign_language" frameborder="0" style="margin-left: 390px;">
+  </iframe>
+</section>
+<h2 id="wiki_h">Wikipedia Information</h1>
+  <hr>
+<hr>
+<section id="feedback">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchCJkdtPbPi8tIHZDoIB6hsJKhn0DKmpcFpryIGMarns5lQw/viewform?embedded=true" width="1000" height="900" frameborder="0" marginheight="0" marginwidth="0" id="iframe1">Loading…</iframe>
+</section>
+<h2 id="feed2">You can enter your feedback if you liked my website :)</h2> 
+<section id="about">
+  <h1 id="con1">About me</h1>
+  <div class="row">
+    <img src="about-me-sec-photo.png" class="circle" id="aboutimg">
+  <h3 id="head2">I am Kyra Verma, a coder nourished by Whitehat Jr.<br>I love creating new apps and websites and 
+  I enjoyed developing Signdo. <br>It was interesting to provide viewers with information on Sign-language: a very important topic according to me :)<br>
+  <div class="contact1"> 
+    <a href="mailto:someone@example.com?Subject=Hello">
+      <img src="https://img.icons8.com/material-outlined/2x/mail.png">  &nbsp; &nbsp; 
+      <h3> crystalwaterblue@gmail.com </h3> </a>
+</h2>
+</div>
+</section>
+<h4 style="text-align: center;" id="h1">***************************************</h4>
+
+</div>
+</body>
+</html>
+
+<DIV ID="SectionName" class="row" STYLE="display:none"><div class="text-capitalize">Unlock more content by subscribing to Signdo now! Click the button below!<br><button type="button" class="btn btn-success" id="button" onclick="more()">UNLOCK MORE!</button></div></DIV>
+<div id="videos" class="row" style="display: none;">
+
+  
+
+         
+ 
+
+
+
+  
+
+  
+
+
+  
+
+
+
